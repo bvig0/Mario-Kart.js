@@ -1,13 +1,22 @@
 {
-  "name": "02-meuprojeto",
+  "name": "mario-kart-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simulação de corridas do Mario Kart feita em Node.js, com lógica de jogo e exibição dos resultados diretamente no terminal.",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "game",
+    "terminal",
+    "mario-kart",
+    "simulation",
+    "mario-kart-simulation"
+  ],
+  "author": "Brian Vigo de Oliveira",
   "license": "ISC",
   "type": "commonjs"
 }
