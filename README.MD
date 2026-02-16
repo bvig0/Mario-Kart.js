@@ -100,7 +100,7 @@
 <input type="checkbox" id="vitoria-item" />
 <label for="vitoria-item">Ao final, vence quem acumulou mais pontos</label>
 
-<hr>
+---
 
 <h2>Como jogar</h2>
 
