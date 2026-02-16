@@ -1,4 +1,4 @@
-<h1>Desafio de projeto do Felipão: Mario Kart.JS</h1>
+# Mario Kart.JS TERMINAL</h1>
 
   <table>
         <tr>
@@ -101,21 +101,3 @@
 
 <input type="checkbox" id="vitoria-item" />
 <label for="vitoria-item">Ao final, vence quem acumulou mais pontos</label>
-<hr> <br>
-<h2>Como jogar</h2>
-
-<p>Para rodar o projeto, é necessário ter o <b>Node.js</b> e o <b>npm</b> instalados na máquina.</p>
-
-<p>Após isso, abra o terminal na pasta do projeto e execute <b>um</b> dos comandos abaixo:</p>
-
-<pre>
-npm start
-</pre>
-
-<pre>
-npm run start
-</pre>
-
-<pre>
-node src/index.js
-</pre>
