@@ -1,18 +1,71 @@
-const player1 = {
+import readline from "node:readline/promises";
+import { stdin as input, stdout as output } from "node:process";
+const rl = readline.createInterface({ input, output });
+let player1 = null;
+let player2 = null;
+
+// personagens:
+const mario = {
     nome: "Mario",
     velocidade: 4,
     manobrabilidade: 3,
     poder: 3,
     pontos: 0
-};
-
-const player2 = {
+}
+const peach = {
+    nome: "Peach",
+    velocidade: 3,
+    manobrabilidade: 4,
+    poder: 2,
+    pontos: 0
+}
+const yoshi = {
+    nome: "Yoshi",
+    velocidade: 2,
+    manobrabilidade: 4,
+    poder: 3,
+    pontos: 0
+}
+const bowser = {
+    nome: "Bowser",
+    velocidade: 5,
+    manobrabilidade: 2,
+    poder: 5,
+    pontos: 0
+}
+const luigi = {
     nome: "Luigi",
     velocidade: 3,
     manobrabilidade: 4,
     poder: 4,
     pontos: 0
-};
+}
+const donkeyKong = {
+    nome: "Donkey Kong",
+    velocidade: 2,
+    manobrabilidade: 2,
+    poder: 5,
+    pontos: 0
+}
+
+async function choosePlayer() {
+    let character;
+    console.log("\n1-Mario | 2-Peach | 3-Yoshi \n4-Bowser | 5-Luigi | 6-Donkey Kong");
+    let op = Number(await rl.question("Digite o número correspondente ao personagem para selecionar ele: "));
+    switch (op) {
+        case 1: character = mario; break;
+        case 2: character = peach; break;
+        case 3: character = yoshi; break;
+        case 4: character = bowser; break;
+        case 5: character = luigi; break;
+        case 6: character = donkeyKong; break;
+        default: console.log("Opção inválida.");
+            return choosePlayer(); // tenta de novo
+    }
+    console.log(`${character.nome} foi escolhido!`);
+    return character;
+}
+
 
 async function rollD6() {
     return Math.floor(Math.random() * 6) + 1;
@@ -22,17 +75,9 @@ async function getRandomBlock() {
     let random = Math.random();
     let result = ""
     switch (true) {
-        case random < 0.33:
-            result = "RETA";
-            break;
-
-        case random < 0.66:
-            result = "CURVA";
-            break;
-
-        default:
-            result = "CONFRONTO";
-
+        case random < 0.33: result = "RETA"; break;
+        case random < 0.66: result = "CURVA"; break;
+        default: result = "CONFRONTO"; break;
     }
     return result;
 }
@@ -99,12 +144,12 @@ async function playRaceEngine(character1, character2) {
         if (totalTestSkill1 > totalTestSkill2) {
             console.log(`${character1.nome} marcou um ponto!`);
             character1.pontos++;
-        } else if (totalTestSkill2 > totalTestSkill1) {
+        } 
+        if (totalTestSkill2 > totalTestSkill1) {
             console.log(`${character2.nome} marcou um ponto!`);
             character2.pontos++;
-        } else {
-            console.log("Empate! Ninguém marcou ponto.");
         }
+        console.log(totalTestSkill2 == totalTestSkill1 ? "Empatado! Ninguém marcou ponto" : "");
         console.log("====================================================\n");
     }
 }
@@ -126,6 +171,9 @@ async function declareWinner(character1, character2) {
 
 // Função autoinvocável, mesma coisa que eu escrever "main();" em alguma linha
 (async function main() {
+    player1 = await choosePlayer();
+    player2 = await choosePlayer();
+
     console.log(`🏁🚨 Corrida entre ${player1.nome} e ${player2.nome} começando...\n`);
 
     await playRaceEngine(player1, player2);
