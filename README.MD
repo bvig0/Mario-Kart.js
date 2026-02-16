@@ -108,14 +108,8 @@
 
 <p>Após isso, abra o terminal na pasta do projeto e execute <b>um</b> dos comandos abaixo:</p>
 
-<pre>
-npm start
-</pre>
+- <pre>npm start</pre>
 
-<pre>
-npm run start
-</pre>
+- <pre>npm run start</pre>
 
-<pre>
-node src/index.js
-</pre>
+- <pre>node src/index.js</pre>
