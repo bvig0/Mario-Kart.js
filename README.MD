@@ -1,4 +1,4 @@
-# Mario Kart.JS TERMINAL</h1>
+<h1> Mario Kart.JS TERMINAL</h1>
 
   <table>
         <tr>
