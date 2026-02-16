@@ -79,12 +79,10 @@
 <h3>🕹️ Regras & mecânicas:</h3>
 
 <b>Jogadores:</b>
-
 <input type="checkbox" id="jogadores-item" />
 <label for="jogadores-item">O Computador deve receber dois personagens para disputar a corrida em um objeto cada</label>
 
 <b>Pistas:</b>
-
 <ul>
   <li><input type="checkbox" id="pistas-1-item" /> <label for="pistas-1-item">Os personagens irão correr em uma pista aleatória de 5 rodadas</label></li>
   <li><input type="checkbox" id="pistas-2-item" /> <label for="pistas-2-item">A cada rodada, será sorteado um bloco da pista que pode ser uma reta, curva ou confronto</label>
